@@ -8,13 +8,16 @@
     "lint": "eslint *.ts*"
   },
   "devDependencies": {
-    "@splashsaver/tsconfig": "*",
     "@splashsaver/config": "*",
+    "@splashsaver/tsconfig": "*",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
     "react": "^17.0.2",
     "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "next": "^12.1.6"
   }
 }
