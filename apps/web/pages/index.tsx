@@ -1,12 +1,11 @@
-import { Button } from "@splashsaver/ui";
+import { Button, Layout } from "@splashsaver/ui";
 
 const Web = () => {
   return (
-    <div className="flex bg-black">
-      <h1 className="text-red-500">Web</h1>
-      <Button />
-    </div>
+    <Layout>
+      <Button>hello</Button>
+    </Layout>
   );
-}
+};
 
 export default Web;
