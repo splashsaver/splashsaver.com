@@ -1,0 +1,11 @@
+{
+  "name": "@splashsaver/lib",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@splashsaver/tsconfig": "*",
+    "@splashsaver/types": "*",
+    "typescript": "^4.7.4"
+  }
+}

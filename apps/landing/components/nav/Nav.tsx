@@ -1,5 +1,6 @@
-import { NavLink as Props } from "@splashsaver/types/NavLink";
 import { Button, SplashsaverLink as Link } from "@splashsaver/ui";
+import { NavLink as Props } from "@splashsaver/types/NavLink";
+import { WEB_URL } from "@splashsaver/lib/constants";
 import { NavLink } from "./NavLink";
 
 export const Nav = () => {
@@ -22,8 +23,10 @@ export const Nav = () => {
           />
         ))}
       </div>
-      <Link href="/">Log in</Link>
-      <Link href="/signup">
+      <Link href={`${WEB_URL}/auth/login`} target="_blank">
+        Log in
+      </Link>
+      <Link href={`${WEB_URL}/auth/signup`} target="_blank">
         <Button className="ml-4">Sign up</Button>
       </Link>
     </nav>
