@@ -1,7 +1,10 @@
 import {
   Button,
   Layout,
-  SplashsaverLink as Link,
+  AuthInputWrapper,
+  AuthForm,
+  Text,
+  Error,
   Input,
   Label,
 } from "@splashsaver/ui";
@@ -12,23 +15,18 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const signupSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+  const loginSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
   return (
     <Layout>
       <div className="flex-1 h-full"></div>
-      <form
-        onSubmit={signupSubmitHandler}
-        className="flex flex-col justify-center border-l pl-6 border-stone-800 ml-auto mr-12 w-96"
-      >
-        <p className="text-red-500 text-xs text-center mb-5">
-          {error && error}
-        </p>
+      <AuthForm onSubmit={loginSubmitHandler}>
+        {error && <Error className="text-center mb-5" message={error} />}
         <h1 className="font-bold text-xl mb-2 text-white">Login</h1>
-        <p className="text-gray-400 text-sm mb-4 max-w-xs">Welcome back!</p>
-        <InputWrapper>
+        <Text className="mb-4 max-w-xs">Welcome back!</Text>
+        <AuthInputWrapper>
           <Label>Email</Label>
           <Input
             type="email"
@@ -39,8 +37,8 @@ const Login = () => {
             placeholder="john@doe.com"
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
-        </InputWrapper>
-        <InputWrapper>
+        </AuthInputWrapper>
+        <AuthInputWrapper>
           <Label>Password</Label>
           <Input
             type="password"
@@ -51,15 +49,11 @@ const Login = () => {
             placeholder="********"
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
-        </InputWrapper>
+        </AuthInputWrapper>
         <Button>Login</Button>
-      </form>
+      </AuthForm>
     </Layout>
   );
-};
-
-const InputWrapper = ({ children }: { children?: React.ReactNode }) => {
-  return <div className="flex flex-col mb-4">{children}</div>;
 };
 
 export default Login;

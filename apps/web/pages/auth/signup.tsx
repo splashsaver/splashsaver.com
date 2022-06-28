@@ -2,9 +2,14 @@ import {
   Button,
   Layout,
   SplashsaverLink as Link,
+  AuthInputWrapper,
+  Text,
+  AuthForm,
+  Error,
   Input,
   Label,
 } from "@splashsaver/ui";
+import { LANDING_URL } from "@splashsaver/lib/constants";
 import { useState } from "react";
 
 const SignUp = () => {
@@ -26,18 +31,14 @@ const SignUp = () => {
   return (
     <Layout>
       <div className="flex-1 h-full"></div>
-      <form
-        onSubmit={signupSubmitHandler}
-        className="flex flex-col justify-center border-l pl-6 border-stone-800 ml-auto mr-12 w-96 rounded"
-      >
-        <p className="text-red-500 text-xs text-center mb-5">
-          {error && error}
-        </p>
+      <AuthForm onSubmit={signupSubmitHandler}>
+        {error && <Error className="text-center mb-5" message={error} />}
         <h1 className="font-bold text-xl mb-2 text-white">Sign Up</h1>
-        <p className="text-gray-400 text-sm mb-4 max-w-xs">
+
+        <Text className="mb-4 max-w-xs">
           Sign up today and start using splashsaver to manage your teams.
-        </p>
-        <InputWrapper>
+        </Text>
+        <AuthInputWrapper>
           <Label>Name</Label>
           <Input
             type="text"
@@ -48,8 +49,8 @@ const SignUp = () => {
             placeholder="John Doe"
             onChange={(e) => setName(e.currentTarget.value)}
           />
-        </InputWrapper>
-        <InputWrapper>
+        </AuthInputWrapper>
+        <AuthInputWrapper>
           <Label>Email</Label>
           <Input
             type="email"
@@ -60,8 +61,8 @@ const SignUp = () => {
             placeholder="john@doe.com"
             onChange={(e) => setEmail(e.currentTarget.value)}
           />
-        </InputWrapper>
-        <InputWrapper>
+        </AuthInputWrapper>
+        <AuthInputWrapper>
           <Label>Password (8 characters)</Label>
           <Input
             type="password"
@@ -72,26 +73,30 @@ const SignUp = () => {
             placeholder="********"
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
-        </InputWrapper>
+        </AuthInputWrapper>
         <Button>Sign up for free</Button>
-        <div className="mt-4 text-gray-400 text-xs max-w-xs">
-          By signing up, you agree to our{" "}
-          <Link className="hover:underline text-xs" href="/terms">
-            Terms of Service
-          </Link>{" "}
-          and{" "}
-          <Link className="hover:underline text-xs" href="/privacy">
-            Privacy Policy
-          </Link>
-          .
+        <div className="mt-4 max-w-xs">
+          <Text>
+            By signing up, you agree to our{" "}
+            <Link
+              className="hover:underline text-sm"
+              href={`${LANDING_URL}/terms`}
+            >
+              Terms of Service
+            </Link>{" "}
+            and{" "}
+            <Link
+              className="hover:underline text-sm"
+              href={`${LANDING_URL}/privacy`}
+            >
+              Privacy Policy
+            </Link>
+            .
+          </Text>
         </div>
-      </form>
+      </AuthForm>
     </Layout>
   );
-};
-
-const InputWrapper = ({ children }: { children?: React.ReactNode }) => {
-  return <div className="flex flex-col mb-4">{children}</div>;
 };
 
 export default SignUp;
