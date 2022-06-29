@@ -63,7 +63,7 @@ const SignUp = () => {
           />
         </AuthInputWrapper>
         <AuthInputWrapper>
-          <Label>Password (8 characters)</Label>
+          <Label>Password (At least 8 characters)</Label>
           <Input
             type="password"
             name="password"
