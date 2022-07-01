@@ -2,12 +2,14 @@ import {
   Button,
   Layout,
   AuthInputWrapper,
+  SplashsaverLink as Link,
   AuthForm,
   Text,
   Error,
   Input,
   Label,
 } from "@splashsaver/ui";
+import { WEB_URL } from "@splashsaver/lib/constants";
 import { useState } from "react";
 
 const Login = () => {
@@ -51,6 +53,14 @@ const Login = () => {
           />
         </AuthInputWrapper>
         <Button>Login</Button>
+        <div className="mt-4 max-w-xs">
+          <Text>
+            Don't already have an account?{" "}
+            <Link className="hover:underline" href={`${WEB_URL}/auth/signup`}>
+              Click here
+            </Link>
+          </Text>
+        </div>
       </AuthForm>
     </Layout>
   );

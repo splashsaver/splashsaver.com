@@ -9,7 +9,7 @@ import {
   Input,
   Label,
 } from "@splashsaver/ui";
-import { LANDING_URL } from "@splashsaver/lib/constants";
+import { LANDING_URL, WEB_URL } from "@splashsaver/lib/constants";
 import { useState } from "react";
 
 const SignUp = () => {
@@ -74,20 +74,30 @@ const SignUp = () => {
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
         </AuthInputWrapper>
+        <div className="mb-4 max-w-xs">
+          <Text>
+            Have an account already?{" "}
+            <Link className="hover:underline" href={`${WEB_URL}/auth/login`}>
+              Click here
+            </Link>
+          </Text>
+        </div>
         <Button>Sign up for free</Button>
         <div className="mt-4 max-w-xs">
           <Text>
             By signing up, you agree to our{" "}
             <Link
-              className="hover:underline text-sm"
+              className="hover:underline"
               href={`${LANDING_URL}/terms`}
+              target="_blank"
             >
               Terms of Service
             </Link>{" "}
             and{" "}
             <Link
-              className="hover:underline text-sm"
+              className="hover:underline"
               href={`${LANDING_URL}/privacy`}
+              target="_blank"
             >
               Privacy Policy
             </Link>
