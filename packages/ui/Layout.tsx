@@ -7,9 +7,7 @@ interface LayoutProps {
 
 export const Layout = ({ className, children }: LayoutProps) => {
   return (
-    <div
-      className={`flex justify-center h-screen w-screen bg-black ${className}`}
-    >
+    <div className={`flex justify-center bg-black ${className}`}>
       {children}
     </div>
   );

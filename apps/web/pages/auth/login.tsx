@@ -10,6 +10,7 @@ import {
   Label,
 } from "@splashsaver/ui";
 import { WEB_URL } from "@splashsaver/lib/constants";
+import { Seo } from "../../components/seo/Seo";
 import { useState } from "react";
 
 const Login = () => {
@@ -23,6 +24,7 @@ const Login = () => {
 
   return (
     <Layout>
+      <Seo title="Login - Splashsaver" description="Login into your account." />
       <div className="flex-1 h-full"></div>
       <AuthForm onSubmit={loginSubmitHandler}>
         {error && <Error className="text-center mb-5" message={error} />}
@@ -55,7 +57,7 @@ const Login = () => {
         <Button>Login</Button>
         <div className="mt-4 max-w-xs">
           <Text>
-            Don't already have an account?{" "}
+            Don&apos;t already have an account?{" "}
             <Link className="hover:underline" href={`${WEB_URL}/auth/signup`}>
               Click here
             </Link>

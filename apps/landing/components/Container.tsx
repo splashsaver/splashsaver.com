@@ -1,6 +1,12 @@
-export const Container = ({ children }: { children?: React.ReactNode }) => {
+export const Container = ({
+  children,
+  className,
+}: {
+  children?: React.ReactNode;
+  className?: string | undefined;
+}) => {
   return (
-    <div className="flex justify-center w-screen h-screen items-center pt-14">
+    <div className={`flex flex-col h-screen items-center w-full ${className}`}>
       {children}
     </div>
   );

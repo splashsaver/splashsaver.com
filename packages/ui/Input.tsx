@@ -21,7 +21,7 @@ export const Input = ({
 }: InputProps) => {
   return (
     <input
-      className={`flex items-center border border-stone-700 text-sm  outline-none text-white bg-stone-900 justify-center duration-300 rounded p-1 h-8 px-3 ${className}`}
+      className={`flex items-center border border-gray-800 text-sm  outline-none text-white bg-gray-900 justify-center duration-300 rounded p-1 h-8 px-3 ${className}`}
       type={type}
       id={id}
       name={name}

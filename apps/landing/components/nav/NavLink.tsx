@@ -6,7 +6,7 @@ export const NavLink = ({ target, text, href }: Props) => {
   return (
     <Link href={href}>
       <a
-        className="text-gray-300 p-5 text-sm duration-300 hover:text-white"
+        className="text-gray-400 p-5 text-sm duration-300 hover:text-white"
         target={target}
       >
         {text}

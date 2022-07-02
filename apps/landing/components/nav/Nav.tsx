@@ -11,7 +11,7 @@ export const Nav = () => {
   ];
 
   return (
-    <nav className="flex items-center border-b border-stone-800 justify-between w-screen px-40 fixed top-0 h-14">
+    <nav className="flex items-center border-b border-gray-900 justify-between w-screen px-40 fixed top-0 h-14">
       <h1 className="font-semibold text-white text-lg">splashsaver.com</h1>
       <div className="space-x-4 m-auto">
         {LINKS.map((link) => (

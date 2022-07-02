@@ -15,7 +15,7 @@ export const SplashsaverLink = ({
 }: SplashsaverLinkProps) => {
   return (
     <Link href={href}>
-      <a className={`text-sm text-[#BB86FC] ${className}`} target={target}>
+      <a className={`text-sm text-brand ${className}`} target={target}>
         {children}
       </a>
     </Link>
