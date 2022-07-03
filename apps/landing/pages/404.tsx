@@ -12,7 +12,7 @@ const NotFoundPage: NextPage = () => {
       <Container className="justify-center">
         <Text>Oops!</Text>
         <h1 className="text-white font-bold text-3xl">404 - Page not found.</h1>
-        <Button className="mt-2" onClick={() => router.back()}>
+        <Button className="mt-4 w-fit" onClick={() => router.back()}>
           Click here to return
         </Button>
       </Container>

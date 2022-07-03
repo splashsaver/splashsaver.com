@@ -12,6 +12,7 @@ import {
 import { WEB_URL } from "@splashsaver/lib/constants";
 import { Seo } from "../../components/seo/Seo";
 import { useState } from "react";
+import { Cover } from "../../components/Cover";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -25,11 +26,14 @@ const Login = () => {
   return (
     <Layout>
       <Seo title="Login - Splashsaver" description="Login into your account." />
-      <div className="flex-1 h-full"></div>
+      <Cover />
       <AuthForm onSubmit={loginSubmitHandler}>
         {error && <Error className="text-center mb-5" message={error} />}
         <h1 className="font-bold text-xl mb-2 text-white">Login</h1>
-        <Text className="mb-4 max-w-xs">Welcome back!</Text>
+        <Text className="mb-4 max-w-xs">
+          Welcome back to splashsaver! Login into your account to start using
+          splashsaver.
+        </Text>
         <AuthInputWrapper>
           <Label>Email</Label>
           <Input
@@ -54,11 +58,19 @@ const Login = () => {
             onChange={(e) => setPassword(e.currentTarget.value)}
           />
         </AuthInputWrapper>
-        <Button>Login</Button>
-        <div className="mt-4 max-w-xs">
+        <div className="mb-4 max-w-xs">
           <Text>
             Don&apos;t already have an account?{" "}
             <Link className="hover:underline" href={`${WEB_URL}/auth/signup`}>
+              Click here
+            </Link>
+          </Text>
+        </div>
+        <Button>Login</Button>
+        <div className="mt-4 max-w-xs">
+          <Text>
+            Forgot your password?{" "}
+            <Link className="hover:underline" href={`${WEB_URL}/auth/reset`}>
               Click here
             </Link>
           </Text>

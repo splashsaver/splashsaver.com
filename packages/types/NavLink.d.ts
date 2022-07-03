@@ -3,4 +3,5 @@ export interface NavLink {
   target?: React.HTMLAttributeAnchorTarget | undefined;
   text: string;
   href: string;
+  active?: boolean;
 }

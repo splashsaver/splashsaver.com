@@ -12,6 +12,7 @@ import {
 import { LANDING_URL, WEB_URL } from "@splashsaver/lib/constants";
 import { Seo } from "../../components/seo/Seo";
 import { useState } from "react";
+import { Cover } from "../../components/Cover";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -32,7 +33,7 @@ const SignUp = () => {
   return (
     <Layout>
       <Seo title="Sign Up - Splashsaver" description="Sign up for an account" />
-      <div className="flex-1 h-full"></div>
+      <Cover />
       <AuthForm onSubmit={signupSubmitHandler}>
         {error && <Error className="text-center mb-5" message={error} />}
         <h1 className="font-bold text-xl mb-2 text-white">Sign Up</h1>
