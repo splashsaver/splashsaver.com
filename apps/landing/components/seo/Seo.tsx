@@ -16,6 +16,9 @@ export const Seo = ({ title, description }: SeoProps) => {
       <meta name="theme-color" content="#BB86FC" />
       <meta name="description" content={description} />
       <meta property="twitter:description" content={description} />
+      <meta property="og:url" content="https://splashsaver.com/" />
+      <meta property="og:site_name" content="Splashsaver" />
+      <meta property="og:type" content="website" />
     </Head>
   );
 };

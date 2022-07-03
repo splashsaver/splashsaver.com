@@ -3,17 +3,20 @@ import { WEB_URL } from "@splashsaver/lib/constants";
 import { Container } from "../components/Container";
 import { Nav } from "../components/nav/Nav";
 import { NextPage } from "next";
+import { Seo } from "../components/seo/Seo";
 
 const Landing: NextPage = () => {
   return (
     <Layout>
+      <Seo description="Making managing teams easy for startups." />
       <Nav />
       <Container>
         <div className="flex flex-col w-full h-full justify-center">
-          <h1 className="text-white font-bold text-3xl max-w-4xl">
-            Making managing teams easy for startups.
+          <h1 className="text-white font-bold text-3xl">
+            Making managing teams easy
+            <br /> for startups.
           </h1>
-          <Text className="text-lg max-w-lg py-2">
+          <Text className="text-base max-w-sm py-2">
             Splashsaver is a platform trying to simplify the way startup
             founders manage their teams.
           </Text>
