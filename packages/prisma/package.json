@@ -3,10 +3,21 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "prisma:migrate": "prisma migrate dev --name init",
+    "prisma:push": "prisma db push",
+    "prisma:generate": "prisma generate",
+    "prisma:format": "prisma format",
+    "prisma:mix": "prismix && prisma format",
+    "prisma:studio": "prisma studio"
+  },
   "devDependencies": {
     "@types/node": "^18.0.0",
     "prisma": "^4.0.0",
     "ts-node": "^10.8.1",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.0.0"
   }
 }

@@ -13,14 +13,15 @@ import { LANDING_URL, WEB_URL } from "@splashsaver/lib/constants";
 import { Seo } from "../../components/seo/Seo";
 import { useState } from "react";
 import { Cover } from "../../components/Cover";
+import { NextPage } from "next";
 
-const SignUp = () => {
+const SignUp: NextPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const signupSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+  const signupSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (password.length < 8) {
@@ -28,6 +29,19 @@ const SignUp = () => {
     }
 
     setError("");
+
+    const data = { name, email, password };
+
+    fetch("/api/auth/signup", {
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -37,7 +51,6 @@ const SignUp = () => {
       <AuthForm onSubmit={signupSubmitHandler}>
         {error && <Error className="text-center mb-5" message={error} />}
         <h1 className="font-bold text-xl mb-2 text-white">Sign Up</h1>
-
         <Text className="mb-4 max-w-xs">
           Sign up today and start using splashsaver to manage your teams.
         </Text>

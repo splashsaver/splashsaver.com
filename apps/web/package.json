@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@splashsaver/tsconfig": "*",
     "@splashsaver/lib": "*",
+    "@splashsaver/prisma": "*",
+    "@splashsaver/tsconfig": "*",
     "@splashsaver/ui": "*",
+    "argon2": "^0.28.5",
+    "jsonwebtoken": "^8.5.1",
     "next": "12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2"
@@ -19,6 +22,7 @@
   "devDependencies": {
     "@splashsaver/config": "*",
     "@splashsaver/types": "*",
+    "@types/jsonwebtoken": "^8.5.8",
     "@types/node": "^17.0.12",
     "@types/react": "17.0.37",
     "autoprefixer": "^10.4.7",
