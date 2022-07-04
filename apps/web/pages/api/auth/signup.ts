@@ -3,7 +3,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@splashsaver/prisma";
 
 // dev url http://localhost:3001/api/auth/signup
-// setup prisma and finish this later
 
 export default async function handler(
   req: NextApiRequest,
@@ -62,6 +61,13 @@ export default async function handler(
       password: hashedPassword,
     },
     select: {
+      id: true,
+      email: true,
+      username: true,
+      website: true,
+      bio: true,
+      avatar: true,
+      name: true,
       password: false,
     },
   });

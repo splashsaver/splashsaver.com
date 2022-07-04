@@ -33,7 +33,7 @@ const SignUp: NextPage = () => {
     const data = { name, email, password };
 
     fetch("/api/auth/signup", {
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data }),
       headers: { "Content-Type": "application/json" },
       method: "POST",
     })
