@@ -60,17 +60,7 @@ export default async function handler(
       emailVerified: false,
       password: hashedPassword,
     },
-    select: {
-      id: true,
-      email: true,
-      username: true,
-      website: true,
-      bio: true,
-      avatar: true,
-      name: true,
-      password: false,
-    },
   });
 
-  res.status(201).send({ success: true, user, token: 1 });
+  res.status(201).send({ success: true });
 }

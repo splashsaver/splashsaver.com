@@ -16,6 +16,7 @@
     "argon2": "^0.28.5",
     "jsonwebtoken": "^8.5.1",
     "next": "12.0.8",
+    "next-auth": "^4.8.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
